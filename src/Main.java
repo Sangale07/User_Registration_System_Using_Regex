@@ -15,6 +15,13 @@ public class Main {
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
     }
+
+    public static boolean validateMobileNumber(String mobile) {
+        String mobileRegex = "^[0-9]{2}\\s[0-9]{10}$";
+        Pattern pattern = Pattern.compile(mobileRegex);
+        Matcher matcher = pattern.matcher(mobile);
+        return matcher.matches();
+    }
     public static void main(String[] args) {
         String firstName = "John";
         String lastName = "Doe";
@@ -37,6 +44,12 @@ public class Main {
             System.out.println("Email is valid.");
         } else {
             System.out.println("Email is invalid.");
+        }
+
+        if (validateMobileNumber(mobile)) {
+            System.out.println("Mobile Number is valid.");
+        } else {
+            System.out.println("Mobile Number is invalid.");
         }
 
     }
