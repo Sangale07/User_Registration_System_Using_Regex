@@ -19,5 +19,12 @@ public class Main {
         } else {
             System.out.println("First Name is invalid.");
         }
+
+        if (validateName(lastName)) {
+            System.out.println("Last Name is valid.");
+        } else {
+            System.out.println("Last Name is invalid.");
+        }
+
     }
 }
