@@ -22,6 +22,10 @@ public class Main {
         Matcher matcher = pattern.matcher(mobile);
         return matcher.matches();
     }
+    public static boolean validatePasswordLength(String password) {
+        return password.length() >= 8;
+    }
+
     public static void main(String[] args) {
         String firstName = "John";
         String lastName = "Doe";
@@ -50,6 +54,13 @@ public class Main {
             System.out.println("Mobile Number is valid.");
         } else {
             System.out.println("Mobile Number is invalid.");
+        }
+
+
+        if (validatePasswordLength(password)) {
+            System.out.println("Password length is valid.");
+        } else {
+            System.out.println("Password length is invalid. It must be at least 8 characters.");
         }
 
     }
