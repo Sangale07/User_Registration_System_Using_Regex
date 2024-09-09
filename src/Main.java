@@ -25,6 +25,12 @@ public class Main {
     public static boolean validatePasswordLength(String password) {
         return password.length() >= 8;
     }
+    public static boolean validatePasswordUpperCase(String password) {
+        String upperCaseRegex = ".*[A-Z]+.*";
+        Pattern pattern = Pattern.compile(upperCaseRegex);
+        Matcher matcher = pattern.matcher(password);
+        return matcher.matches();
+    }
 
     public static void main(String[] args) {
         String firstName = "John";
@@ -61,6 +67,12 @@ public class Main {
             System.out.println("Password length is valid.");
         } else {
             System.out.println("Password length is invalid. It must be at least 8 characters.");
+        }
+
+        if (validatePasswordUpperCase(password)) {
+            System.out.println("Password contains an uppercase letter.");
+        } else {
+            System.out.println("Password must contain at least one uppercase letter.");
         }
 
     }
