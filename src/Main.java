@@ -8,6 +8,13 @@ public class Main {
             Matcher matcher = pattern.matcher(name);
             return matcher.matches();
         }
+
+    public static boolean validateEmail(String email) {
+        String emailRegex = "^[a-zA-Z0-9]+([._][a-zA-Z0-9]+)*@[a-zA-Z0-9]+\\.[a-zA-Z]{2,}(\\.[a-zA-Z]{2,})?$";
+        Pattern pattern = Pattern.compile(emailRegex);
+        Matcher matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
     public static void main(String[] args) {
         String firstName = "John";
         String lastName = "Doe";
@@ -24,6 +31,12 @@ public class Main {
             System.out.println("Last Name is valid.");
         } else {
             System.out.println("Last Name is invalid.");
+        }
+
+        if (validateEmail(email)) {
+            System.out.println("Email is valid.");
+        } else {
+            System.out.println("Email is invalid.");
         }
 
     }
