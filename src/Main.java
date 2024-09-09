@@ -37,6 +37,12 @@ public class Main {
         Matcher matcher = pattern.matcher(password);
         return matcher.matches();
     }
+    public static boolean validatePasswordSpecialChar(String password) {
+        String specialCharRegex = "^[^@#$%^&+=]*[@#$%^&+=][^@#$%^&+=]*$";
+        Pattern pattern = Pattern.compile(specialCharRegex);
+        Matcher matcher = pattern.matcher(password);
+        return matcher.matches();
+    }
 
     public static void main(String[] args) {
         String firstName = "John";
@@ -85,6 +91,11 @@ public class Main {
             System.out.println("Password contains a numeric digit.");
         } else {
             System.out.println("Password must contain at least one numeric digit.");
+        }
+        if (validatePasswordSpecialChar(password)) {
+            System.out.println("Password contains exactly one special character.");
+        } else {
+            System.out.println("Password must contain exactly one special character.");
         }
 
     }
