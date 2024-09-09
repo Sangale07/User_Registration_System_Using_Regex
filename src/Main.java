@@ -3,7 +3,7 @@ import java.util.regex.Pattern;
 
 public class Main {
         public static boolean validateName(String name) {
-            String nameRegex = "^[A-Z][a-zA-Z]{2,}$";  // Start with a capital letter and has at least 3 characters
+            String nameRegex = "^[A-Z][a-zA-Z]{2,}$";
             Pattern pattern = Pattern.compile(nameRegex);
             Matcher matcher = pattern.matcher(name);
             return matcher.matches();
