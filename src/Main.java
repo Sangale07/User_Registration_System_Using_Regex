@@ -31,6 +31,12 @@ public class Main {
         Matcher matcher = pattern.matcher(password);
         return matcher.matches();
     }
+    public static boolean validatePasswordNumeric(String password) {
+        String numericRegex = ".*[0-9]+.*";
+        Pattern pattern = Pattern.compile(numericRegex);
+        Matcher matcher = pattern.matcher(password);
+        return matcher.matches();
+    }
 
     public static void main(String[] args) {
         String firstName = "John";
@@ -73,6 +79,12 @@ public class Main {
             System.out.println("Password contains an uppercase letter.");
         } else {
             System.out.println("Password must contain at least one uppercase letter.");
+        }
+
+        if (validatePasswordNumeric(password)) {
+            System.out.println("Password contains a numeric digit.");
+        } else {
+            System.out.println("Password must contain at least one numeric digit.");
         }
 
     }
